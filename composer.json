@@ -1,0 +1,55 @@
+{
+    "name": "bestys-mobile/lumen-purchases",
+    "description": "Lumen receipt validator for Apple and Google Play",
+    "keywords": [
+        "lumen-in-app-purchases",
+        "google_play",
+        "in_app_purchases",
+        "lumen"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1",
+        "ext-json": "*",
+        "bestys-mobile/appstore-iap": "dev-master",
+        "bestys-mobile/google-play-billing": "dev-master",
+        "nesbot/carbon": "^2.41"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.17",
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.5",
+        "psalm/plugin-laravel": "^1.2",
+        "vimeo/psalm": "^4.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bestys\\Purchases\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bestys\\Purchases\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "psalm": "vendor/bin/psalm",
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bestys\\Purchases\\PurchaseServiceProvider"
+            ],
+            "aliases": {
+                "Product": "\\Bestys\\Purchases\\Facades\\Product",
+                "Subscription": "\\Bestys\\Purchases\\Facades\\Subscription"
+            }
+        }
+    }
+}
