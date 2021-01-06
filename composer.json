@@ -11,8 +11,8 @@
     "require": {
         "php": ">=7.1",
         "ext-json": "*",
-        "bestys-mobile/appstore-iap": "dev-master",
-        "bestys-mobile/google-play-billing": "dev-master",
+        "bestys-mobile/appstore-iap": "^0.1",
+        "bestys-mobile/google-play-billing": "^0.1",
         "nesbot/carbon": "^2.41"
     },
     "require-dev": {
